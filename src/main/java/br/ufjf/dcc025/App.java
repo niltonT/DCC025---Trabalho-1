@@ -1,13 +1,17 @@
 package br.ufjf.dcc025;
 
-/**
- * Hello world!
- *
- */
+import javax.swing.*;
+import java.awt.*;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        //AppGUI frame = new AppGUI();
+        CadastraVeiculo frame = new CadastraVeiculo();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600,350);
+        frame.setVisible(true);
     }
+
 }

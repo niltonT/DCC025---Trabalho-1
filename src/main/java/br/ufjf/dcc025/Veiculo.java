@@ -1,20 +1,19 @@
 package br.ufjf.dcc025;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class Veiculo {
     
     private String   montadora;
     private String   modelo;
-    private int      ano;
+    private String   anoFab;
+    private String   anoModelo;   
     private String   placa;
 
     Veiculo(){
         this.montadora = "";
         this.modelo    = "";
         this.placa     = "";
-        this. ano      = 0;
+        this.anoFab    = "";
+        this.anoModelo = "";
     };
 
     public void setMontadora(String montadora){
@@ -25,14 +24,13 @@ public class Veiculo {
         this.modelo = modelo;
     };
 
-    public void setAno(int ano){
-        Date data = new Date();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(data);
-        if(ano > 1900 && ano < calendar.get(Calendar.YEAR) + 1){
-            this.ano = ano;
-        }
+    public void setAnoModelo(String ano){
+        this.anoModelo = ano;
     };
+
+    public void setAnoFab(String ano){
+        this.anoFab = ano;
+    }
 
     public void setPlaca(String placa){
         if(placa.length() == 7){
@@ -48,9 +46,13 @@ public class Veiculo {
         return this.modelo;
     };
 
-    public int getAno(){
-        return this.ano;
+    public String getAnoModelo(){
+        return this.anoModelo;
     };
+
+    public String getAnoFab(){
+        return this.anoFab;
+    }
 
     public String getPlaca(){
         return this.placa;
