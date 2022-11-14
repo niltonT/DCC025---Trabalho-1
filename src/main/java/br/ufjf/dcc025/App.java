@@ -1,6 +1,8 @@
 package br.ufjf.dcc025;
 
 import javax.swing.*;
+import br.ufjf.dcc025.gui.*;
+
 import java.awt.*;
 
 public class App 
@@ -8,10 +10,9 @@ public class App
     public static void main( String[] args )
     {
         //AppGUI frame = new AppGUI();
-        CadastraVeiculo frame = new CadastraVeiculo();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600,350);
+        NovaOS frame = new NovaOS();
         frame.setVisible(true);
+
     }
 
 }

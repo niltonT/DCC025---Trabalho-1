@@ -1,4 +1,4 @@
-package br.ufjf.dcc025;
+package br.ufjf.dcc025.obj;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ public class OrdemServico extends JFrame {
     private Cliente cliente;
     
 
-    OrdemServico(){ 
+    public OrdemServico(){ 
         this.veiculo = new Veiculo();
         this.cliente = new Cliente();
     };

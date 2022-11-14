@@ -1,4 +1,4 @@
-package br.ufjf.dcc025;
+package br.ufjf.dcc025.obj;
 
 public class Veiculo {
     
@@ -8,7 +8,7 @@ public class Veiculo {
     private String   anoModelo;   
     private String   placa;
 
-    Veiculo(){
+    public Veiculo(){
         this.montadora = "";
         this.modelo    = "";
         this.placa     = "";

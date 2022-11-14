@@ -1,4 +1,4 @@
-package br.ufjf.dcc025;
+package br.ufjf.dcc025.gui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,23 +25,23 @@ public class CadastraVeiculo extends JFrame {
     private JTextArea campoObs;
     private JScrollPane obs;
 
-    private JButton button;
+    private JButton buttonCadastrar;
+    private JButton buttonCancelar;
+    private JButton buttonBuscar;
 
-    CadastraVeiculo(){
+    public CadastraVeiculo(){
 
         super("Cadastrar veiculo");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
-        this.setSize(600,250);
         this.setResizable(false);
-        this.setVisible(true);
 
         this.textFieldPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         this.flowPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         this.obsButtonPanel = new JPanel(new BorderLayout());
         this.borderPanel = new JPanel(new BorderLayout());
         this.gridPanel = new JPanel(new GridLayout(2,1));
-        this.buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        this.buttonPanel = new JPanel(new FlowLayout());
         
         this.campoMontadora = new JTextField(15);
         this.textFieldPanel.add(new JLabel("Montadora: "));
@@ -77,16 +77,24 @@ public class CadastraVeiculo extends JFrame {
         this.obsButtonPanel.add(obs,BorderLayout.CENTER);
         this.obsButtonPanel.setPreferredSize(new Dimension(600,100));
         this.borderPanel.add(this.obsButtonPanel,BorderLayout.CENTER);
-
-        this.button = new JButton("BOTÃO");
-        this.button.setPreferredSize(new Dimension(150,50));
-        this.buttonPanel.add(this.button);
-
         this.gridPanel.setPreferredSize(new Dimension(600,100));
+
+        
+        this.buttonCadastrar = new JButton("CADASTRAR");
+        //this.buttonCadastrar.addActionListener(new ButtonClick());
+        this.buttonCadastrar.setPreferredSize(new Dimension(150,50));
+        this.buttonPanel.add(this.buttonCadastrar);
+
+        this.buttonBuscar = new JButton("BUSCAR");
+        this.buttonBuscar.setPreferredSize(new Dimension(120,50));
+        this.buttonPanel.add(this.buttonBuscar);
+ 
+        this.buttonCancelar = new JButton("CANCELAR");
+        this.buttonCancelar.setPreferredSize(new Dimension(150,50));
+        this.buttonPanel.add(this.buttonCancelar);
         
         this.add(this.gridPanel,BorderLayout.NORTH);
         this.add(this.borderPanel,BorderLayout.CENTER);
         this.add(this.buttonPanel,BorderLayout.SOUTH);
     }
-    
 }

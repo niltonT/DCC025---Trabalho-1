@@ -1,4 +1,4 @@
-package br.ufjf.dcc025;
+package br.ufjf.dcc025.obj;
 
 public class Endereco {
     
@@ -7,7 +7,7 @@ public class Endereco {
     private int numero;
     private String complemento;
 
-    Endereco(){
+    public Endereco(){
         this.endereco = "";
         this.cep =  "00000-000";
         this.numero = 0;

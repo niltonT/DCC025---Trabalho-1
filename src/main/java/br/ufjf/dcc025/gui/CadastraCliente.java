@@ -1,6 +1,8 @@
-package br.ufjf.dcc025;
+package br.ufjf.dcc025.gui;
 
 import javax.swing.*;
+import br.ufjf.dcc025.obj.Cliente;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -27,14 +29,11 @@ public class CadastraCliente extends JFrame{
     private JButton buttonBuscar;
 
     CadastraCliente(){
-        
-        
+
         super("Cadastrar cliente");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
         this.setResizable(false);
-        this.setSize(600,250);
-        this.setResizable(false);
-        this.setVisible(true);
 
         this.centerPanel = new JPanel(new GridLayout(2,1));
         this.painel = new JPanel(new FlowLayout(FlowLayout.LEFT));

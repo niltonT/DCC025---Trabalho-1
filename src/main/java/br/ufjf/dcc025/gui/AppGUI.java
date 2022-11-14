@@ -1,4 +1,4 @@
-package br.ufjf.dcc025;
+package br.ufjf.dcc025.gui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +8,7 @@ public class AppGUI extends JFrame{
     private JPanel buttonPainel;
     private JButton buttonOS, buttonSair;
 
-    AppGUI(){
+    public AppGUI(){
         super();
         this.setLayout(new GridLayout(3,1));
 

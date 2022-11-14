@@ -1,6 +1,4 @@
-package br.ufjf.dcc025;
-
-import br.ufjf.dcc025.Cliente;
+package br.ufjf.dcc025.obj;
 
 public class Cliente {
  
@@ -11,7 +9,7 @@ public class Cliente {
     private String bairro;
     private String celular;
 
-    Cliente(){
+    public Cliente(){
         this.nome = "";
         this.cpf = "";
         this.endereco = "";
