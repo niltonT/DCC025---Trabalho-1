@@ -1,18 +1,16 @@
 package br.ufjf.dcc025;
 
-import javax.swing.*;
 import br.ufjf.dcc025.gui.*;
-
-import java.awt.*;
+import br.ufjf.dcc025.obj.*;
 
 public class App 
 {
     public static void main( String[] args )
     {
-        //AppGUI frame = new AppGUI();
-        NovaOS frame = new NovaOS();
+        AppGUI frame = new AppGUI();
         frame.setVisible(true);
-
+        System.out.println("111");
+        frame.printClientes();
     }
 
 }

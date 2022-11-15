@@ -1,5 +1,7 @@
 package br.ufjf.dcc025.obj;
 
+import java.util.*;
+
 public class Cliente {
  
     private String nome;
@@ -8,6 +10,7 @@ public class Cliente {
     private String complemento;
     private String bairro;
     private String celular;
+    public List   veiculos;
 
     public Cliente(){
         this.nome = "";
@@ -16,6 +19,7 @@ public class Cliente {
         this.complemento = "";
         this.bairro = "";
         this.celular = "";
+        this.veiculos = new ArrayList<Veiculo>(); 
     }
 
     public void setNome(String nome){
@@ -23,9 +27,7 @@ public class Cliente {
     }
 
     public void setCpf(String cpf){
-        if(cpf.length() == 11){
-            this.cpf = cpf;
-        }
+        this.cpf = cpf;
     }
 
     public void setEndereco(String endereco){

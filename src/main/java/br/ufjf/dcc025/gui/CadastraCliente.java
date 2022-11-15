@@ -1,13 +1,20 @@
 package br.ufjf.dcc025.gui;
 
+import java.util.*;
+import java.util.List;
 import javax.swing.*;
 import br.ufjf.dcc025.obj.Cliente;
-
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class CadastraCliente extends JFrame{
+
+
+    private int LARGURA = 600;
+    private int ALTURA = 300;
+
+    private List clientes;
 
     private JPanel painel;
     private JPanel centerPanel;
@@ -28,12 +35,15 @@ public class CadastraCliente extends JFrame{
     private JButton buttonCancelar;
     private JButton buttonBuscar;
 
-    CadastraCliente(){
+    CadastraCliente(List<Cliente> clientes){
 
         super("Cadastrar cliente");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setSize(LARGURA,ALTURA);
         this.setLayout(new BorderLayout());
         this.setResizable(false);
+
+        this.clientes = clientes;
 
         this.centerPanel = new JPanel(new GridLayout(2,1));
         this.painel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -82,7 +92,7 @@ public class CadastraCliente extends JFrame{
         this.add(this.buttonPanel, BorderLayout.SOUTH);
         
         this.buttonCadastrar = new JButton("CADASTRAR");
-        this.buttonCadastrar.addActionListener(new ButtonClick());
+        this.buttonCadastrar.addActionListener(new buttonCadastrar());
         this.buttonCadastrar.setPreferredSize(new Dimension(150,50));
         this.buttonPanel.add(this.buttonCadastrar);
 
@@ -91,12 +101,13 @@ public class CadastraCliente extends JFrame{
         this.buttonPanel.add(this.buttonBuscar);
  
         this.buttonCancelar = new JButton("CANCELAR");
+        this.buttonCancelar.addActionListener(new buttonCancelar());
         this.buttonCancelar.setPreferredSize(new Dimension(150,50));
         this.buttonPanel.add(this.buttonCancelar);
 
     }
 
-    public Cliente cadastra(){
+    public void cadastra(){
 
         Cliente cliente = new Cliente();
         cliente.setNome(this.campoNome.getText());
@@ -105,13 +116,18 @@ public class CadastraCliente extends JFrame{
         cliente.setComplemento(this.campoComplemento.getText());
         cliente.setBairro(this.campoBairro.getText());
         cliente.setCelular(this.campoCelular.getText());
-        return cliente;
+        this.clientes.add(cliente);
     }
 
-    class ButtonClick implements ActionListener{
+    class buttonCadastrar implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            
            cadastra();
+           dispose();
+        }
+    }
+
+    class buttonCancelar implements ActionListener{
+        public void actionPerformed(ActionEvent e){
            dispose();
         }
     }

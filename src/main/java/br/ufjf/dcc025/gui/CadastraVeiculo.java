@@ -7,13 +7,15 @@ import java.awt.event.ActionEvent;
 
 public class CadastraVeiculo extends JFrame {
 
+    private int LARGURA = 600;
+    private int ALTURA = 300;
+    
     private JPanel textFieldPanel;
     private JPanel obsButtonPanel;
     private JPanel flowPanel;
     private JPanel borderPanel;
     private JPanel gridPanel;
     private JPanel buttonPanel;
-
 
     private JTextField campoPlaca;
     private JTextField campoMontadora;
@@ -32,7 +34,8 @@ public class CadastraVeiculo extends JFrame {
     public CadastraVeiculo(){
 
         super("Cadastrar veiculo");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setSize(LARGURA,ALTURA);
         this.setLayout(new BorderLayout());
         this.setResizable(false);
 
@@ -81,7 +84,7 @@ public class CadastraVeiculo extends JFrame {
 
         
         this.buttonCadastrar = new JButton("CADASTRAR");
-        //this.buttonCadastrar.addActionListener(new ButtonClick());
+        this.buttonCadastrar.addActionListener(new buttonCadastrar());
         this.buttonCadastrar.setPreferredSize(new Dimension(150,50));
         this.buttonPanel.add(this.buttonCadastrar);
 
@@ -90,11 +93,24 @@ public class CadastraVeiculo extends JFrame {
         this.buttonPanel.add(this.buttonBuscar);
  
         this.buttonCancelar = new JButton("CANCELAR");
+        this.buttonCancelar.addActionListener(new buttonCancelar());
         this.buttonCancelar.setPreferredSize(new Dimension(150,50));
         this.buttonPanel.add(this.buttonCancelar);
         
         this.add(this.gridPanel,BorderLayout.NORTH);
         this.add(this.borderPanel,BorderLayout.CENTER);
         this.add(this.buttonPanel,BorderLayout.SOUTH);
+    }
+
+    class buttonCadastrar implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+           dispose();
+        }
+    }
+
+    class buttonCancelar implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+           dispose();
+        }
     }
 }
