@@ -8,11 +8,16 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/*
+    Nome: Nilton Rego Teixeira
+    Matricula: 202035006
+ */
+
 public class CadastraCliente extends JFrame{
 
 
     private int LARGURA = 600;
-    private int ALTURA = 300;
+    private int ALTURA = 350;
 
     private List clientes;
 

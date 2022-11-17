@@ -8,6 +8,11 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
+/*
+    Nome: Nilton Rego Teixeira
+    Matricula: 202035006
+ */
+
 public class AppGUI extends JFrame{
     
     private int LARGURA = 960;

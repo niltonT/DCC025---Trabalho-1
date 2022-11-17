@@ -6,6 +6,11 @@ import java.time.LocalDate;
 import br.ufjf.dcc025.utils.*;
 import java.awt.event.*;
 
+/*
+    Nome: Nilton Rego Teixeira
+    Matricula: 202035006
+ */
+
 public class NovaOS extends JFrame{
     
     private static int totalOS;
